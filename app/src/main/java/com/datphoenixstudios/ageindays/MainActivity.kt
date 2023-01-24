@@ -11,6 +11,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    //creates variables in which we later save our tv's from the layout
     private var tvSelectedDay: TextView? = null
     private var tvAgeInDays: TextView? = null
 
@@ -20,9 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         val button: Button = findViewById(R.id.buttonCalc)
 
+        //saving the layout tv's in our variables
         tvSelectedDay = findViewById(R.id.tvDate)
         tvAgeInDays = findViewById(R.id.tvDays)
-
 
         button.setOnClickListener {
             clickDatePicker()
@@ -44,46 +45,36 @@ class MainActivity : AppCompatActivity() {
         val datePickerDialog = DatePickerDialog(
             this,
             { _, year, month, dayOfMonth ->
-                Toast.makeText(
-                    this,
-                    "Year was $year months was ${month + 1} and day was $dayOfMonth",
-                    Toast.LENGTH_LONG
-                ).show()
+                //checking the selected date with a print statement
+                println("Year was $year months was ${month + 1} and day was $dayOfMonth")
 
                 //displays the picked date on our screen
                 val selectedDay = "$dayOfMonth/${month + 1}/$year"
                 tvSelectedDay?.text = selectedDay
 
-                //formats our date and our calendar
+                //saves the date formatting in a variable
                 val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.GERMAN)
 
                 //uses the format on our picked date
                 val theDate = simpleDateFormat.parse(selectedDay)
 
-                val selectedDateInMinutes = (theDate!!.time / 60000) / 1440 // to get AGE IN DAYS
-//                val selectedDateInMinutes = theDate!!.time / 60000 // to get the minutes from 1st Jan. 1970
-                // Toast is added to view resulting number
-                Toast.makeText(this, "SELECTED date in minutes $selectedDateInMinutes", Toast.LENGTH_LONG).show()
+                //calculating the day of our picked date
+                val selectedDateInDays = (theDate!!.time / 60000) / 1440
 
+                //getting the current date and converting it to days
                 val currentDate = simpleDateFormat.parse(simpleDateFormat.format(System.currentTimeMillis()))
-//                val currentDateInMinutes = currentDate!!.time / 60000
-                val currentDateInDays = (currentDate!!.time / 60000) / 1440 // to get AGE IN DAYS
-                // Toast is added to view resulting number
-                Toast.makeText(this, "Current date in minutes $currentDateInDays", Toast.LENGTH_LONG).show()
+                val currentDateInDays = (currentDate!!.time / 60000) / 1440
 
-                val differenceInMinutes = currentDateInDays - selectedDateInMinutes // the age in minutes
-
-                tvAgeInDays?.text = differenceInMinutes.toString()
+                //calculating the difference between the current day and the picked day and displaying it
+                val differenceInDays = currentDateInDays - selectedDateInDays
+                tvAgeInDays?.text = differenceInDays.toString()
             },
             year,
             month,
             day
         )
+        //enabling to only access days in the past (starting from yesterday)
         datePickerDialog.datePicker.maxDate = System.currentTimeMillis() - 86400000
         datePickerDialog.show()
-
-
     }
-
-
 }

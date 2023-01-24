@@ -10,4 +10,5 @@
     <color name="pageBackground">#DC2F02</color>
     <color name="textColor">#6A040F</color>
     <color name="textBackground">#370617</color>
+    <color name="buttonBackground">#FAA307</color>
 </resources>
