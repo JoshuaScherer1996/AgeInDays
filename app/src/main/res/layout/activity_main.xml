@@ -65,6 +65,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50sp"
+        android:backgroundTint="@color/buttonBackground"
+        android:textColor="@color/textBackground"
         android:text="SELECT DATE" />
 
     <TextView
