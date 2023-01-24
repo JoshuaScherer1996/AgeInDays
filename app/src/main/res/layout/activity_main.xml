@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/pageBackground"
+    android:orientation="vertical"
+    android:padding="10sp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvTitleCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:text="CALCULATE YOUR"
+        android:textColor="@color/textColor"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitleAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/textBackground"
+        android:text="AGE"
+        android:textColor="@color/white"
+        android:padding="5sp"
+        android:layout_marginTop="20sp"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/tvTitleIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:text="IN"
+        android:textColor="@color/textColor"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitleDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/textBackground"
+        android:text="DAYS"
+        android:textColor="@color/white"
+        android:padding="5sp"
+        android:layout_marginTop="10sp"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/buttonCalc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:text="SELECT DATE" />
+
+    <TextView
+        android:id="@+id/tvDescriptionDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginTop="100sp"
+        android:textSize="20dp"
+        android:text="Selected date" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="5sp"
+        android:textSize="20dp"
+        android:text="19/12/1996" />
+
+    <TextView
+        android:id="@+id/tvDescriptionTillDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginTop="20sp"
+        android:textSize="20dp"
+        android:text="In days till date" />
+
+    <TextView
+        android:id="@+id/tvDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="5sp"
+        android:textSize="20dp"
+        android:text="14" />
+
+</LinearLayout>
