@@ -10,6 +10,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+    //TEST COMMENT
+
 
     //creates variables in which we later save our tv's from the layout
     private var tvSelectedDay: TextView? = null
